@@ -1,0 +1,114 @@
+div, p, body, ul, li, ol, text-align: {
+ margin:0px:;
+ padding:0px;
+ border:0px;
+}
+
+body{
+ color:#60967e;
+}
+
+.brown {
+ background-color:#884400;
+}
+
+.background_color {
+ background-color:#0000bb;
+}
+
+.woven {
+ background-image:url("../pix/weave1.png");
+ background-size: 40px;
+}
+
+.center_horizontally {
+ margin:0px 100px 0px 100px;
+}
+
+#top_of_handle {
+ width:500px;
+ border-color:black;
+ border-style:solid;
+ border-width:5px;
+ margin:10px auto 0px auto;
+ padding:30px 10px 0px 10px;
+ border-top-left-radius: 320px;
+ border-top-right-radius: 320px;
+}
+
+#bottom_of_handle {
+ border-color:black;
+ border-style:solid;
+ border-width:5px 5px 0px 5px;
+ border-top-left-radius: 160px;
+ border-top-right-radius: 160px;
+ min-height:200px;
+ padding:5px 5px 0px 5px;
+ margin:10px 0px 0px 0px;
+ position:relative;
+}
+
+#main_basket {
+ min-height:200px;
+ border-color:black;
+ border-style:solid;
+ border-width:0px 5px 5px 5px;
+ max-width:510px;
+ margin:0px auto 100px auto;
+ border-bottom-right-radius: 30px;
+ border-bottom-left-radius: 30px;
+ padding:10px 0px 10px 10px;
+}
+
+#basket_iframe {
+ width:350px;
+ height:100px;
+ margin:10px 75px 10px 75px;
+ border:0px;
+}
+
+.first_navigation_item{
+ position:absolute;
+ bottom: 0px;
+ left: 0px;
+ background-color:#FC9D9A;
+ padding:30px 20px 30px 5px;
+ border-top-right-radius: 50px;
+}
+
+.second_navigation_item{
+ position:absolute;
+ bottom: 0px;
+ left: 100px;
+ background-color:#F9CDAD;
+ padding:10px 50px 10px 20px;
+ border-top-right-radius: 50px;
+ border-top-left-radius: 50px;
+}
+
+.third_navigation_item{
+ position:absolute;
+ bottom: 0px;
+ left: 200px;
+ background-color:#83AF9B;
+}
+
+
+
+.navigation_item {
+ display:inline;
+}
+
+.navigation_item a{
+ color:#000000;
+ text-decoration:none;
+}
+
+#footer_span {
+ margin:300px 100px 0px 100px;
+ font-size:10px;
+}
+
+#footer_span a{
+ text-decoration: none;
+}

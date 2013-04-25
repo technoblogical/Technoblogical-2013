@@ -1,0 +1,7 @@
+/*
+For screen resolutions that are less than 700
+*/
+article{
+  width:400px;
+  margin:1px;
+}

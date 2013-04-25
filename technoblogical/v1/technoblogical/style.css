@@ -1,0 +1,124 @@
+/*
+Theme Name: Technoblogical
+Theme URI: http://www.technoblogical.com/
+Author: Chris Walker
+Author URI: http://www.technoblogical.com/
+Description: The Technoblogical theme is designed for Technoblogical.com
+Version: 4.0
+I think that V3 is a complete theme, but in case it isn't, here's version 4. Remember to install the Yoast plugin.
+*/
+a,abbr,acronym,address,area,article,aside,b,base,big,blockquote,body,button,canvas,caption,cite,code,div,footer,h1,h2,h3,h4,h5,h6,nav,p,span
+{margin:0px;padding:0px;}
+aside{
+  width:250px;
+  min-height:400px;
+  margin:1px;
+}
+a:link, a:visited, a:hover, a:active{
+  color:#663399;
+}
+article{
+  /*min-width:100px;
+  max-width:75%;
+  margin:1px;*/
+}
+article p{
+  margin:1ex 0px;
+}
+body{
+  background:url("images/background.png") #000000;
+  background-attachment:fixed;
+}
+footer{
+  width:80%;
+  clear:both;
+}
+h1,h2,h3,h4,h5,h6{
+  color:#0000ff;
+}
+h1{
+  font-size: 30pt;
+}
+nav{
+  padding-bottom: 30px;
+}
+.alignLeft{
+  float:left;
+}
+.alignRight{
+  float:right;
+}
+.buttonlogical{
+  font-size: 11pt;
+}
+.buttonlogical a{
+  text-decoration: none;
+}
+.buttonlogical li, small.buttonlogical{
+  background:#dddddd;
+  padding:5px;
+  margin:0px 5px;
+  border-radius: 10px;
+  color:#663399;
+  font-weight:bold;
+  border:#000000 solid 2px;
+  line-height: 200%;
+}
+.inlineBlock li {
+  display:inline-block;
+}
+#allEncompassingDiv{
+  margin:10px 10px 130px;
+  min-width:500px;
+  background:white;
+  border:#000000 5px solid;
+  border-radius:50px;
+  opacity:.95;
+  filter:alpha(opacity=95);
+  padding:50px 1px;
+  overflow:auto;
+}
+.previousPostNextPost{
+  font-size:6pt;
+  font-family: serif;
+}
+#backgroundTitle a{
+  text-decoration: none;
+  color:#000000;
+}
+#backgroundTitle a:hover, #backgroundTitle a:active{
+  text-decoration: none;
+  color:#663399;
+}
+#authorCredentials{
+  line-height: 10px;
+  font-size: 10px;
+  padding:0px;
+  margin:0px;
+}
+#backgroundTitle{
+  text-shadow:1px 1px 1px white,-1px 1px 1px white,1px -1px 1px white,-1px -1px 1px white;
+  color:black;
+  font-size:20pt;
+  font-weight:bold;
+  position:fixed;
+  z-index:-1;
+  bottom:0px;
+  left:0px;
+  max-height:600px;
+  line-height: 25pt;
+  font-family: serif;
+  font-weight:normal;
+  padding:0px 10px;
+}
+#backgroundTitle:first-letter {
+  font-size:200%;
+}
+#backgroundTitle:first-line {
+  font-size:200%;
+  font-weight:bold;
+  font-family: monospace;
+}
+#previousPostNextPost li{
+  display:inline-block;
+}

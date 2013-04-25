@@ -1,0 +1,30 @@
+nav{
+ text-align: center;
+}
+nav ul{
+ padding:0px;
+ margin:0px;
+ text-indent:0px;
+}
+.menuButton, nav li{
+ padding:5px 0px;
+ font-size:30px;
+ display:block;
+ color:white;
+ background:#aaaaaa;
+ width:50%;
+ margin:0px auto;
+}
+nav li{
+ width:100%;
+}
+nav li a{
+ text-decoration:none;
+ font-size: 10pt;
+ color:white;
+}
+nav>ul>li{background:#000000;}
+nav>ul>li>ul>li{background:#222222;}
+nav>ul>li>ul>li>ul>li{background:#444444;}
+nav>ul>li>ul>li>ul>li>ul>li{background:#666666;}
+nav>ul>li>ul>li>ul>li>ul>li>ul>li{background:#888888;}

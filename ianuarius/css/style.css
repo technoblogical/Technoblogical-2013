@@ -1,0 +1,105 @@
+div, article, h1, h6, ol, ul, li, p, body, html, img, a{
+ margin:0px;
+ padding:0px;
+ border:0px;
+}
+
+#all_enclosing_div{
+ box-shadow:0px 0px 20px 10px #b4e6e5;
+}
+
+.padding_5px {
+ padding:5px;
+}
+
+.margin_5px {
+ margin:5px;
+}
+
+.border_radius_5px {
+ border-radius:5px;
+}
+
+body {
+ background-color:#f6edf2;
+}
+
+#all_enclosing_div {
+ margin:0px 10%;
+}
+
+.logo_and_slogan {
+ width:150px;
+
+}
+
+.float_left {
+ float:left;
+}
+
+.float_right {
+ float:right;
+}
+
+.root_clear_float {
+ clear:both;
+}
+
+.header_div .root_clear_float {
+ width:100%;
+}
+
+#header_div {
+ background-color:#fb0b3f;
+}
+
+#navigation_div li {
+ background-color:#fffc7f;
+}
+
+#navigation_div {
+ width:100%;
+}
+
+#navigation_div a {
+ text-decoration: none;
+ color:black;
+}
+
+footer a {
+ text-decoration: none;
+ color:black;
+}
+
+footer a:hover {
+ text-decoration: none;
+ color:blue;
+}
+
+footer {
+ font-size:8px;
+}
+
+
+#navigation_div a:hover {
+ text-decoration: none;
+ color:blue;
+}
+
+#navigation_list li{
+ display:inline-block;
+}
+
+#article_div{
+ background-color:white;
+}
+
+#article_div p {
+ padding:5px;
+ text-indent:10px;
+}
+
+#footer_div {
+ background-color:#fffc7f;
+ padding:5px;
+}

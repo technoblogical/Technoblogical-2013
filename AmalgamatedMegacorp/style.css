@@ -1,0 +1,91 @@
+/*
+Theme Name: AmalgamatedMegacorp
+Theme URI: http://www.technoblogical.com/
+Author: Chris Walker
+Author URI: http://www.technoblogical.com/
+Description: The Technoblogical theme is designed for Technoblogical.com
+Version: 3.0
+After fooling around with HTML and CSS for a desktop (v1) and mobile (v2) theme, Version 3 promises to be the first WordPress theme. (Desktop Only?)
+*/
+
+a,abbr,acronym,address,area,article,aside,b,base,big,blockquote,body,button,canvas,caption,cite,code,div,footer,h1,h2,h3,h4,h5,h6
+html,li,nav,ol,p,span,ul
+{margin:0px;padding:0px;}
+html{
+ background:red;
+}
+p{
+ text-indent: 5ex;
+ margin:10px;
+}
+article{
+ padding:0px;
+ margin:0px;
+}
+aside{
+ width:270px;
+ padding:10px;
+ margin:0px 10px 10px 0px;
+}
+footer{
+ padding:10px;
+}
+.amalgamatedWrapper{padding:0px 200px 0px;}
+body{background:white;}
+.amalgamatedWrapper{background:red;}
+.amalgamatedWrapper:nth-of-type(1){background:blue;}
+.amalgamatedWrapper:nth-of-type(2){background:white;}
+.rootClearFloat{clear:left;height:0px;}
+.floatLeft{float:left;}
+.floatRight{float:right;}
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{
+ text-decoration: none;
+ color:blue;
+}
+h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover,
+h1 a:active,h2 a:active,h3 a:active,h4 a:active,h5 a:active,h6 a:active{
+ text-decoration: none;
+ color:red;
+}
+#previousPostNextPost li{
+ display:inline-block;
+ width:200px;
+ text-align: center;
+ border:1px solid black;
+ border-radius:4px;
+ background:#aaaaaa;
+ padding:2px;
+ margin:1px 0px;
+}
+#previousPostNextPost a:last-of-type{
+ float:right;
+}
+#previousPostNextPost a:first-of-type{
+ float:left;
+}
+.logoDiv{
+ font-size:12pt;
+ font-family: serif;
+ color:red;
+ text-shadow:1px 1px 0px black,-1px 1px 0px black,1px -1px 0px black,-1px -1px 0px black;
+}
+.logoDiv a{
+ font-size:40px;
+ font-weight:900;
+ font-family: monospace;
+ color:red;
+}
+.widgetDiv{
+ background:#eeeeee;
+ border:1px blue solid;
+ padding:5px;
+}
+.widgetDiv ul{
+ list-style: none;
+}
+.widgetDiv ul li{
+ margin-top: 10px;
+}
+.widgetDiv ul a{
+ text-decoration: none;
+}

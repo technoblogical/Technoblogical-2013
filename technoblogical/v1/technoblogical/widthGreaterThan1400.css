@@ -1,0 +1,7 @@
+/*
+For screen resolutions that are greater than 1400
+*/
+article{
+  width:1100px;
+  margin:1px;
+}
