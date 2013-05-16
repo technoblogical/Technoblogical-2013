@@ -3,34 +3,34 @@
  <head>
   <script>
    function numberFromTheTextBox(){
+    //get the number from the text box
     return Number(document.getElementById('theBalance').innerHTML);
    }
    function depositFunction(){
-    //get the number from the text box
-    var workingWithTheBalance=numberFromTheTextBox();
-    workingWithTheBalance+=Number(document.getElementById('theBox').value);
-    document.getElementById('theBalance').innerHTML=workingWithTheBalance.toFixed(2);
-    document.getElementById('theTransactions').innerHTML+="<tr><td>deposit</td><td>+"+Number(document.getElementById('theBox').value)+"</td></tr>";
+    var workingWithTheBalance=numberFromTheTextBox(); //get the number from the text box
+    workingWithTheBalance+=Number(document.getElementById('theBox').value); //Adds to the balance
+    document.getElementById('theBalance').innerHTML=workingWithTheBalance.toFixed(2); //changes the "balance" below the form
+    document.getElementById('theTransactions').innerHTML+="<tr><td>deposit</td><td>+"+Number(document.getElementById('theBox').value)+"</td></tr>"; //adds transaction to the table
    }// end of depositFunction
    function withdrawalFunction(){
-    var workingWithTheBalance=numberFromTheTextBox();
-    workingWithTheBalance-=Number(document.getElementById('theBox').value);
-    document.getElementById('theBalance').innerHTML=workingWithTheBalance.toFixed(2);
-    document.getElementById('theTransactions').innerHTML+="<tr><td>withdrawal</td><td>-"+Number(document.getElementById('theBox').value)+"</td></tr>";
+    var workingWithTheBalance=numberFromTheTextBox(); //get the number from the text box
+    workingWithTheBalance-=Number(document.getElementById('theBox').value); //subtracts from the balance
+    document.getElementById('theBalance').innerHTML=workingWithTheBalance.toFixed(2); //changes the "balance" below the form
+    document.getElementById('theTransactions').innerHTML+="<tr><td>withdrawal</td><td>-"+Number(document.getElementById('theBox').value)+"</td></tr>"; //adds transaction to the table
    } //end of withdrawalFunction
    function monthEndFunction(){
-    var workingWithTheBalance=numberFromTheTextBox();
+    var workingWithTheBalance=numberFromTheTextBox();//get the number from the text box
     if (workingWithTheBalance>=100){
      document.getElementById('theTransactions').innerHTML+="<tr><td>interest</td><td>+"+(workingWithTheBalance*0.01).toFixed(2)+"</td></tr>";
-     workingWithTheBalance*=1.01;
+     workingWithTheBalance*=1.01; //Add interest if balance is over $100
     } else if(workingWithTheBalance<=11.99){
-     document.getElementById('theTransactions').innerHTML+="<tr><td>Service Fee</td><td>-12.00</td></tr><tr><td>Insufficient Funds</td><td>-20.00</td></tr>";
-     workingWithTheBalance-=32;
+     document.getElementById('theTransactions').innerHTML+="<tr><td>Service Fee</td><td>-12.00</td></tr><tr><td>Insufficient Funds</td><td>-20.00</td></tr>"; //adds transaction to the table
+     workingWithTheBalance-=32; //Charges service($12) and insufficient funds($20) fee if balance is under $12
     } else {
-     workingWithTheBalance-=12;
-     document.getElementById('theTransactions').innerHTML+="<tr><td>Service Fee</td><td>-12.00</td></tr>";
+     workingWithTheBalance-=12; //Charges service fee if balance is under $100
+     document.getElementById('theTransactions').innerHTML+="<tr><td>Service Fee</td><td>-12.00</td></tr>"; //adds transaction to the table
     }
-    document.getElementById('theBalance').innerHTML=workingWithTheBalance.toFixed(2);
+    document.getElementById('theBalance').innerHTML=workingWithTheBalance.toFixed(2); //changes the "balance" below the form
    }//end of monthEndFunction
   </script>
  <head>
