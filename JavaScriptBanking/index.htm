@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script>
+   function numberFromTheTextBox(){
+    return Number(document.getElementById('theBalance').innerHTML);
+   }
+   function depositFunction(){
+    //get the number from the text box
+    var workingWithTheBalance=numberFromTheTextBox();
+    workingWithTheBalance+=Number(document.getElementById('theBox').value);
+    document.getElementById('theBalance').innerHTML=workingWithTheBalance.toFixed(2);
+    document.getElementById('theTransactions').innerHTML+="<tr><td>deposit</td><td>+"+Number(document.getElementById('theBox').value)+"</td></tr>";
+   }// end of depositFunction
+   function withdrawalFunction(){
+    var workingWithTheBalance=numberFromTheTextBox();
+    workingWithTheBalance-=Number(document.getElementById('theBox').value);
+    document.getElementById('theBalance').innerHTML=workingWithTheBalance.toFixed(2);
+    document.getElementById('theTransactions').innerHTML+="<tr><td>withdrawal</td><td>-"+Number(document.getElementById('theBox').value)+"</td></tr>";
+   } //end of withdrawalFunction
+   function monthEndFunction(){
+    var workingWithTheBalance=numberFromTheTextBox();
+    if (workingWithTheBalance>=100){
+     document.getElementById('theTransactions').innerHTML+="<tr><td>interest</td><td>+"+(workingWithTheBalance*0.01).toFixed(2)+"</td></tr>";
+     workingWithTheBalance*=1.01;
+    } else if(workingWithTheBalance<=11.99){
+     document.getElementById('theTransactions').innerHTML+="<tr><td>Service Fee</td><td>-12.00</td></tr><tr><td>Insufficient Funds</td><td>-20.00</td></tr>";
+     workingWithTheBalance-=32;
+    } else {
+     workingWithTheBalance-=12;
+     document.getElementById('theTransactions').innerHTML+="<tr><td>Service Fee</td><td>-12.00</td></tr>";
+    }
+    document.getElementById('theBalance').innerHTML=workingWithTheBalance.toFixed(2);
+   }//end of monthEndFunction
+  </script>
+ <head>
+ <body>
+  <input type="text" id="theBox" value="00.00"><br/>
+  <button onClick="depositFunction()">deposit</button>
+  <button onClick="withdrawalFunction()">withdrawal</button>
+  <button onClick="monthEndFunction()">month end</button>
+  <br/>
+  Bank Balance: $<span id="theBalance">00.00</span><hr>
+  transactions<br/>
+  <table border="1" id="theTransactions" style="width:100%;table-layout:auto;text-align:right;"></table>
+ </body>
+</html>
