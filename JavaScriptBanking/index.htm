@@ -2,42 +2,60 @@
 <html>
  <head>
   <script>
-   function numberFromTheTextBox(){
-    //get the number from the text box
+   function numberFromTheBalance(){
     return Number(document.getElementById('theBalance').innerHTML);
-   }
-   function depositFunction(){
-    var workingWithTheBalance=numberFromTheTextBox(); //get the number from the text box
-    workingWithTheBalance+=Number(document.getElementById('theBox').value); //Adds to the balance
-    document.getElementById('theBalance').innerHTML=workingWithTheBalance.toFixed(2); //changes the "balance" below the form
-    document.getElementById('theTransactions').innerHTML+="<tr><td>deposit</td><td>+"+Number(document.getElementById('theBox').value)+"</td></tr>"; //adds transaction to the table
-   }// end of depositFunction
-   function withdrawalFunction(){
-    var workingWithTheBalance=numberFromTheTextBox(); //get the number from the text box
-    workingWithTheBalance-=Number(document.getElementById('theBox').value); //subtracts from the balance
-    document.getElementById('theBalance').innerHTML=workingWithTheBalance.toFixed(2); //changes the "balance" below the form
-    document.getElementById('theTransactions').innerHTML+="<tr><td>withdrawal</td><td>-"+Number(document.getElementById('theBox').value)+"</td></tr>"; //adds transaction to the table
-   } //end of withdrawalFunction
-   function monthEndFunction(){
-    var workingWithTheBalance=numberFromTheTextBox();//get the number from the text box
-    if (workingWithTheBalance>=100){
-     document.getElementById('theTransactions').innerHTML+="<tr><td>interest</td><td>+"+(workingWithTheBalance*0.01).toFixed(2)+"</td></tr>";
-     workingWithTheBalance*=1.01; //Add interest if balance is over $100
-    } else if(workingWithTheBalance<=11.99){
-     document.getElementById('theTransactions').innerHTML+="<tr><td>Service Fee</td><td>-12.00</td></tr><tr><td>Insufficient Funds</td><td>-20.00</td></tr>"; //adds transaction to the table
-     workingWithTheBalance-=32; //Charges service($12) and insufficient funds($20) fee if balance is under $12
-    } else {
-     workingWithTheBalance-=12; //Charges service fee if balance is under $100
-     document.getElementById('theTransactions').innerHTML+="<tr><td>Service Fee</td><td>-12.00</td></tr>"; //adds transaction to the table
+   } //end of numberFromTheBalance()
+
+   function insufficientFundsChecker(variable){ //This function checks for insufficient funds
+    var workingWithTheBalance=variable;
+    if (workingWithTheBalance<0){ // if they have negative dollars
+      workingWithTheBalance-=20.00; //deduct $20
+    document.getElementById('theTransactions').innerHTML+="<tr><td>Insufficient Funds</td><td>$20.00</td></tr>"; //record it in the statement
+      document.getElementById('theBalance').innerHTML=workingWithTheBalance.toFixed(2);
+      //adjust balance
     }
-    document.getElementById('theBalance').innerHTML=workingWithTheBalance.toFixed(2); //changes the "balance" below the form
+   } //end of insufficientFundsChecker
+
+   function tableAdder(transactionType,dollarAmount){
+    document.getElementById('theTransactions').innerHTML+="<tr><td>"+transactionType+"</td><td>$"+dollarAmount.toFixed(2)+"</td></tr>";
+   } //end of tableAdder();
+
+   function transactionFunction(parameter){
+    //get the number from the text box for current balance
+    var workingWithTheBalance=numberFromTheBalance();
+    var amountOfTransaction=Number(document.getElementById('theBox').value);
+    if (parameter=="deposit"){
+      workingWithTheBalance+=amountOfTransaction;
+    } else {
+      workingWithTheBalance-=amountOfTransaction;
+      insufficientFundsChecker(workingWithTheBalance);
+    }
+    tableAdder(parameter,amountOfTransaction);
+    document.getElementById('theBalance').innerHTML=workingWithTheBalance.toFixed(2);
+   }// end of transactionFunction
+
+   function monthEndFunction(){
+    var workingWithTheBalance=numberFromTheBalance();
+    if (workingWithTheBalance>=200){
+     tableAdder("interest",workingWithTheBalance*0.02);
+     workingWithTheBalance*=1.02;
+    } else if(workingWithTheBalance>=100){
+     tableAdder("interest",workingWithTheBalance*0.02);
+     workingWithTheBalance*=1.01;
+    } else {
+     workingWithTheBalance-=12;
+     insufficientFundsChecker(workingWithTheBalance);
+     tableAdder("service Fee",12);
+    }
+    document.getElementById('theBalance').innerHTML=workingWithTheBalance.toFixed(2);
    }//end of monthEndFunction
+   
   </script>
  <head>
  <body>
   <input type="text" id="theBox" value="00.00"><br/>
-  <button onClick="depositFunction()">deposit</button>
-  <button onClick="withdrawalFunction()">withdrawal</button>
+  <button onClick="transactionFunction('deposit')">deposit</button>
+  <button onClick="transactionFunction('withdrawal')">withdrawal</button>
   <button onClick="monthEndFunction()">month end</button>
   <br/>
   Bank Balance: $<span id="theBalance">00.00</span><hr>
